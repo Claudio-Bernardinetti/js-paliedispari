@@ -24,40 +24,39 @@ document.querySelector('.play').addEventListener('click', ()=> {
 
  //  Per la const dell'utente devo fare una funzione con min1 and max5.
 
-let userNumber = document.querySelector('.userNumber').value;
 
+    let userNumber = document.querySelector('.userNumber').value;
+    const pcNumber = Math.floor(Math.random() * 6) + 1;
+    console.log(pcNumber);
+    let userNumberEl = document.querySelector('.print');
 
-function userNumberRange(userNumber) {
-    const value = parseInt(userNumber);
-    if (value < 1) {
-        return 1;
-    } else if (value > 5) {
-        return 5;
-    } else {
-        return value;
+    function userNumberRange(userNumber) {
+        const value = parseInt(userNumber);
+        if (value < 1) {
+            return `Numero non compreso tra (1 e 5)`;
+        } else if (value > 5) {
+            return `Numero non compreso tra (1 e 5)`;
+        } else {
+            return result = pcNumber + parseInt(userNumber);
+        }
     }
-}
 
-//const limitedValue = userNumberRange(userNumber);
-userNumber.innerHTML
+    userNumberEl.innerHTML = `${userNumberRange(userNumber)}`;
+    
+
+    function oddEven(result) {
+        if (result % 2 === 0) {
+            console.log('pari');
+        } else {
+            console.log('dispari');
+        }
+
+    }
+    
+    console.log(oddEven(result));
+
+    
 
 
-const pcNumber = Math.floor(Math.random() * 6) + 1;
-console.log(pcNumber);
-//let printWinner = document.querySelector('.risultatoGame')
+});
 
-})
-
-//let userNumber = document.querySelector('.userNumber').value;
-
-// La const per l'utente deve poter inserire un numero.
-
-// La const per il PC si genera in automatico quando premo il button, dopo che ho scritto un numero tra 1 e 5 nell'utente input.
-//userNumberRange(userNumberRange = document.querySelector('.userNumber').value, MIN, MAX);
-//userNumberRange = document.querySelector('.userNumber').value;
-//userNumberRange = document.querySelector('.userNumber');
-//document.querySelector('.print').innerHTML = userNumber;
-//console.log(userNumberRange);
-//const userNumber = userNumberRange[1, 5];
-
-    //console.log(userNumber);
