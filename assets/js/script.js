@@ -31,6 +31,8 @@ document.querySelector('.play').addEventListener('click', ()=> {
     let userNumberEl = document.querySelector('.print');
     let oddEvenEl = document.querySelector('.oddEven');
 
+//  Devo fare la somma di userNumber e pcNumber.
+
     function userNumberRange(userNumber) {
         const value = parseInt(userNumber);
         if (value < 1) {
@@ -44,7 +46,8 @@ document.querySelector('.play').addEventListener('click', ()=> {
     
     
     userNumberEl.innerHTML = `${userNumberRange(userNumber)}`;
-    
+
+    //  Creare una funzione per capire se il risultato e' pari o dispari.
 
     function oddEven(result) {
         if (result % 2 === 0) {
@@ -60,3 +63,44 @@ document.querySelector('.play').addEventListener('click', ()=> {
 
 });
 
+/////////////////////////////////////////////////////////////////////////
+/////////  Palidroma:
+
+// Creare bottone per avviare il check.
+
+document.querySelector('.check').addEventListener('click', ()=> {
+
+    // Creare la const per inserire la parola.
+
+    let word = document.querySelector('.word').value;
+    let wordEl = document.querySelector('.printWord')
+
+    // Creare la funzione che scompone l'array 
+
+    function isPalindrome(word) {
+
+        // Converti word in un array di caratteri
+        let array = word.split('');
+
+        // Inverti l'ordine dei caratteri nell'array
+        array.reverse();
+
+        // Converti l'array di caratteri in una stringa
+        let reversedword = array.join('');
+
+        // Confronta la stringa originale con la stringa invertita
+        return word === reversedword;
+
+    }
+
+    // If/else per stampare il risultato.
+
+    if (isPalindrome(word)) {
+        wordEl.innerHTML = `La parola (${word})  è palindroma`
+        console.log(word + " è palindroma");
+    } else {
+        wordEl.innerHTML = `La parola (${word}) non è palindroma`
+        console.log(word + " non è palindroma");
+    }
+    
+})
