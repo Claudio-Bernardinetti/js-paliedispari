@@ -29,6 +29,7 @@ document.querySelector('.play').addEventListener('click', ()=> {
     const pcNumber = Math.floor(Math.random() * 6) + 1;
     console.log(pcNumber);
     let userNumberEl = document.querySelector('.print');
+    let oddEvenEl = document.querySelector('.oddEven');
 
     function userNumberRange(userNumber) {
         const value = parseInt(userNumber);
@@ -40,23 +41,22 @@ document.querySelector('.play').addEventListener('click', ()=> {
             return result = pcNumber + parseInt(userNumber);
         }
     }
-
+    
+    
     userNumberEl.innerHTML = `${userNumberRange(userNumber)}`;
     
 
     function oddEven(result) {
         if (result % 2 === 0) {
-            console.log('pari');
+            return 'pari';
         } else {
-            console.log('dispari');
+            return 'dispari';
         }
-
+      
     }
-    
+
+    oddEvenEl.innerHTML = `Ha vinto il ${oddEven(result)} 🎉🏆`;
     console.log(oddEven(result));
-
-    
-
 
 });
 
