@@ -82,8 +82,12 @@ document.querySelector('.check').addEventListener('click', ()=> {
         // Converti word in un array di caratteri
         let array = word.split('');
 
+        console.log(array);
+
         // Inverti l'ordine dei caratteri nell'array
         array.reverse();
+
+        console.log(array);
 
         // Converti l'array di caratteri in una stringa
         let reversedword = array.join('');
